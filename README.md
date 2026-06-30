@@ -1,1 +1,1 @@
-reusalbe webpage with customs themes and changable data
+reusalbe webpage with custom themes and changable data
