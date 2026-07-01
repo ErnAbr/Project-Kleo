@@ -1,4 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Henny+Penny&family=Bangers&family=Press+Start+2P&family=Boogaloo&family=Righteous&family=Titan+One&family=Fredoka:wght@400;700&family=Russo+One&family=Creepster&family=Lilita+One&display=swap");
 @import "tailwindcss";
+
 @plugin "daisyui" {
   themes: all;
 }
+
+body {
+  font-family: var(--font-active);
+}
+
+/* get more fonts and add them to the project */

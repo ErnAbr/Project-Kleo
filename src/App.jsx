@@ -5,8 +5,11 @@ import { NavBar } from "./components/NavBar";
 
 function App() {
   useEffect(() => {
-    const theme = coinConfig.theme;
-    document.documentElement.setAttribute("data-theme", theme);
+    document.documentElement.setAttribute("data-theme", coinConfig.theme);
+    document.documentElement.style.setProperty(
+      "--font-active",
+      coinConfig.font,
+    );
   }, []);
 
   return <NavBar />;
