@@ -9,4 +9,14 @@ body {
   font-family: var(--font-active);
 }
 
-/* get more fonts and add them to the project */
+section:not(#hero) {
+  scroll-margin-top: 80px;
+}
+
+#hero {
+  scroll-margin-top: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}

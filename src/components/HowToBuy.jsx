@@ -11,7 +11,7 @@ export const HowToBuy = () => {
   };
 
   return (
-    <section id="howtobuy" className="py-16 w-3/4 mx-auto">
+    <section id="howtobuy" className="mt-3 w-3/4 mx-auto">
       <h2 className="text-4xl font-bold text-center mb-10">How To Buy</h2>
       <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
         {coinConfig.howToBuy.steps.map((step, index) => (

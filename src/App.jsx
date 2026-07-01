@@ -4,7 +4,9 @@ import "./App.css";
 import { NavBar } from "./components/NavBar";
 import { Hero } from "./components/Hero";
 import { HowToBuy } from "./components/HowToBuy";
-import { Tokenomics } from "./components/Tokenomics";
+import { Roadmap } from "./components/RoadMap";
+import { FAQ } from "./components/FAQ";
+import { Footer } from "./components/Footer";
 
 function App() {
   useEffect(() => {
@@ -18,11 +20,13 @@ function App() {
   return (
     <>
       <NavBar />
-      <div className="flex flex-col items-center justify-center gap-5">
+      <div className="flex flex-col items-center justify-center gap-1">
         <Hero />
         <HowToBuy />
-        <Tokenomics />
+        <Roadmap />
+        <FAQ />
       </div>
+      <Footer />
     </>
   );
 }

@@ -10,7 +10,7 @@ export const Hero = () => {
   };
 
   return (
-    <div
+    <section
       id="hero"
       className="hero bg-base-200 mt-2 w-3/4 mx-auto overflow-hidden"
     >
@@ -25,6 +25,13 @@ export const Hero = () => {
             <span className="text-primary">{coinConfig.hero.coinTicker}</span>
           </h1>
           <p className="py-6">{coinConfig.hero.description}</p>
+          <div className="flex flex-wrap gap-2 mb-4">
+            {coinConfig.hero.badges.map((badge, index) => (
+              <span key={index} className="badge badge-success badge-lg">
+                {badge}
+              </span>
+            ))}
+          </div>
           <p className="text-sm opacity-60 mb-4 break-all">
             {coinConfig.hero.contractAddress || "Contract address coming soon"}
           </p>
@@ -52,6 +59,6 @@ export const Hero = () => {
           </div>
         </div>
       )}
-    </div>
+    </section>
   );
 };

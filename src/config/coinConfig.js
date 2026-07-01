@@ -5,10 +5,11 @@ export const coinConfig = {
     image: "./HeroImage.png",
     title: "Cat Gone MAD!!!",
     description:
-      "Always hungry, always looking for food, only sleep when nobody is home and attak when somebody gets back. That's the life of the Kleo CAT. Give him food or suffer the meowing, he jumps on your legs and you hurt him, that's your problem!!!",
+      "Always hungry, always looking for food, only sleep when nobody is home and attak when somebody gets back. That's the life of the Kleo CAT. Give him food or suffer the meowing and attak on your legs. WATCH YOUR STEP!!!",
     buyLink: PUMP_FUN_LINK,
-    contractAddress: "test contract address",
+    contractAddress: "",
     coinTicker: "$KLEO",
+    badges: ["✓ 0% Tax", "✓ Fair Launch", "✓ Liquidity Burned"],
   },
 
   howToBuy: {
@@ -41,8 +42,83 @@ export const coinConfig = {
       },
     ],
   },
-  theme: "bumblebee",
-  font: '"Bangers", cursive',
+
+  roadmap: {
+    icon: "🐾",
+    phases: [
+      {
+        phase: "Phase 1",
+        title: "Wake Up",
+        items: [
+          "Refuse to get out of bed",
+          "Demand breakfast immediately",
+          "Token launches whether you like it or not",
+        ],
+      },
+      {
+        phase: "Phase 2",
+        title: "Demand Food (Marketing)",
+        items: [
+          "Scream at everyone on Crypto Twitter",
+          "Knock Dexscreener off the table",
+          "Bite the hand that doesn't buy",
+        ],
+      },
+      {
+        phase: "Phase 3",
+        title: "Knock Things Off Tables",
+        items: [
+          "Hit the bonding curve",
+          "Destroy all FUD like a keyboard",
+          "Diamond paws only 🐾",
+        ],
+      },
+      {
+        phase: "Phase 4",
+        title: "World Domination",
+        items: [
+          "CEX listing (Kleo demands it)",
+          "Buy unlimited cat food",
+          "Nap on top of the moon 🌙",
+        ],
+      },
+    ],
+  },
+
+  faq: {
+    questions: [
+      {
+        q: "Is this a rug pull?",
+        a: "Kleo is too lazy to run anywhere. Liquidity is burned, just like his patience for empty food bowls.",
+      },
+      {
+        q: "Is this a good investment?",
+        a: "We are a cat on the blockchain. Please do your own research. Kleo is not a financial advisor, he is a menace.",
+      },
+      {
+        q: "Why should I buy $KLEO?",
+        a: "Because Kleo will scream at you until you do. Have you ever tried sleeping through that?",
+      },
+      {
+        q: "When moon?",
+        a: "Kleo is already napping on the moon. The question is when YOU get there.",
+      },
+      {
+        q: "Who is the team?",
+        a: "One very angry cat and his reluctant human servant.",
+      },
+    ],
+  },
+
+  footer: {
+    socialLinks: {
+      twitter: "https://x.com/yourhandle",
+    },
+    disclaimer:
+      "This is a meme coin with no intrinsic value or financial return expectation. Not financial advice. Always do your own research.",
+  },
+  theme: "coffee",
+  font: '"Fredoka", sans-serif',
 };
 
 // Available daisyUI themes:
