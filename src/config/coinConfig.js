@@ -1,4 +1,4 @@
-export const coinData = {
+export const coinConfig = {
   cointName: "",
   coinTicker: "",
   contractAddress: "",
