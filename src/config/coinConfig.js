@@ -1,4 +1,5 @@
-const PUMP_FUN_LINK = "https://pump.fun/coin/YOUR_CONTRACT";
+const PUMP_FUN_LINK =
+  "https://pump.fun/coin/24w3W5jcYHApx64KGNPRfAMXfNcdF9QevWcWcXutpump";
 
 export const coinConfig = {
   hero: {
