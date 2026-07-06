@@ -8,7 +8,7 @@ export const coinConfig = {
     description:
       "Always hungry, always looking for food, only sleep when nobody is home and attak when somebody gets back. That's the life of the Kleo CAT. Give him food or suffer the meowing and attak on your legs. WATCH YOUR STEP!!!",
     buyLink: PUMP_FUN_LINK,
-    contractAddress: "",
+    contractAddress: "24w3W5jcYHApx64KGNPRfAMXfNcdF9QevWcWcXutpump",
     coinTicker: "$KLEO",
     badges: ["✓ 0% Tax", "✓ Fair Launch", "✓ Liquidity Burned"],
   },
