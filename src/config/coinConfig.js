@@ -2,7 +2,7 @@ const PUMP_FUN_LINK = "https://pump.fun/coin/YOUR_CONTRACT";
 
 export const coinConfig = {
   hero: {
-    image: "./HeroImage.png",
+    image: "./HeroImage.JPG",
     title: "Cat Gone MAD!!!",
     description:
       "Always hungry, always looking for food, only sleep when nobody is home and attak when somebody gets back. That's the life of the Kleo CAT. Give him food or suffer the meowing and attak on your legs. WATCH YOUR STEP!!!",
