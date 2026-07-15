@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "ws": "^8.21.0"
+  },
+  "devDependencies": {
+    "@types/ws": "^8.18.1",
+    "tsx": "^4.23.0"
+  },
+  "scripts": {
+    "start": "tsx watch src/index.ts"
+  }
+}
