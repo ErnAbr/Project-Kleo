@@ -1,5 +1,8 @@
-import { filterParams } from "../config";
 import { Filter } from "../types";
+
+const filterParams = {
+  devWalletPosition: 15,
+};
 
 export const devWalletFilter: Filter = (token) => {
   const initialTokens = 1000000000;
