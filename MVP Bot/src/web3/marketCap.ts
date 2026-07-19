@@ -5,14 +5,11 @@ const rpc = createSolanaRpc("https://api.mainnet-beta.solana.com");
 const SOL_DECIMALS = 1_000_000_000;
 const TOKEN_DECIMALS = 1_000_000;
 
-const solanaPrice = 76;
+// const solanaPrice = 76; get real solana price from API if actual MC is needed
 
-async function getMarketCap() {
-  const bondingCurve =
-    "H5C6qg5tyrW37qtYAXV2cG7AsGGqCbCAxMPtnKxegHbH" as Address;
-
+export async function getMarketCap(bondingCurveAddress: Address) {
   const account = await rpc
-    .getAccountInfo(bondingCurve, { encoding: "base64" })
+    .getAccountInfo(bondingCurveAddress, { encoding: "base64" })
     .send();
 
   if (!account.value) {
@@ -42,12 +39,12 @@ async function getMarketCap() {
   const supply = totalSupply / TOKEN_DECIMALS;
 
   const marketCapInSol = priceInSol * supply;
-  const marketCapInUsd = marketCapInSol * solanaPrice;
+  // const marketCapInUsd = marketCapInSol * solanaPrice;
 
   console.log(`Market Cap: ${marketCapInSol.toFixed(2)} SOL`);
-  console.log(`Market Cap: $${marketCapInUsd.toFixed(2)}`);
+  // console.log(`Market Cap: $${marketCapInUsd.toFixed(2)}`);
 
-  return marketCapInUsd;
+  return marketCapInSol;
 }
 
-await getMarketCap();
+// await getMarketCap();

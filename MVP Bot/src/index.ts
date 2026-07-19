@@ -1,11 +1,45 @@
 import { runFilters } from "./filters";
 import { connectPumpPortal } from "./pumpSocket";
+import { sendTelegramAlert } from "./telegram";
+import { getRealSolReserves } from "./web3/realSolReserves";
 
 connectPumpPortal(async (token) => {
   const rejectionReason = await runFilters(token);
+  let realSolInitial = 0;
 
   if (rejectionReason === null) {
-    console.log(token);
+    try {
+      realSolInitial = await getRealSolReserves(token.bondingCurveKey);
+    } catch (err) {
+      console.error(
+        `Failed to read initial reserves for ${token.symbol}:`,
+        err,
+      );
+      return;
+    }
+
+    setTimeout(
+      async () => {
+        try {
+          const realSolAfter = await getRealSolReserves(token.bondingCurveKey);
+          if (realSolAfter - realSolInitial > 0.1) {
+            const photonUrl = `https://photon-sol.tinyastro.io/en/lp/${token.mint}`;
+            sendTelegramAlert(photonUrl);
+            console.log(token);
+          } else {
+            console.log(
+              `REJECTED: ${token.symbol} — only ${(realSolAfter - realSolInitial).toFixed(3)} SOL in 3 min`,
+            );
+          }
+        } catch (err) {
+          console.error(
+            `Failed to read reserves after delay for ${token.symbol}:`,
+            err,
+          );
+        }
+      },
+      3 * 60 * 1000,
+    );
   } else {
     console.log(`REJECTED: ${token.symbol} — ${rejectionReason}`);
   }
