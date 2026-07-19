@@ -24,11 +24,12 @@ connectPumpPortal(async (token) => {
           const realSolAfter = await getRealSolReserves(token.bondingCurveKey);
           if (realSolAfter - realSolInitial > 0.1) {
             const photonUrl = `https://photon-sol.tinyastro.io/en/lp/${token.mint}`;
-            sendTelegramAlert(photonUrl);
+            const pumpUrl = `https://pump.fun/coin/${token.mint}`;
+            sendTelegramAlert(`photon: ${photonUrl} and pump: ${pumpUrl}`);
             console.log(token);
           } else {
             console.log(
-              `REJECTED: ${token.symbol} — only ${(realSolAfter - realSolInitial).toFixed(3)} SOL in 3 min`,
+              `REJECTED: ${token.symbol} — only ${(realSolAfter - realSolInitial).toFixed(3)} SOL in 1 min`,
             );
           }
         } catch (err) {
@@ -38,7 +39,7 @@ connectPumpPortal(async (token) => {
           );
         }
       },
-      3 * 60 * 1000,
+      1 * 60 * 1000,
     );
   } else {
     console.log(`REJECTED: ${token.symbol} — ${rejectionReason}`);

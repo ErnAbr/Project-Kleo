@@ -11,6 +11,9 @@ export function connectPumpPortal(onNewToken: (data: any) => void) {
   });
 
   ws.on("message", function tokens(data: WebSocket.RawData) {
-    onNewToken(JSON.parse(data.toString()));
+    const parsed = JSON.parse(data.toString());
+    if (parsed.txType === "create" && parsed.mint) {
+      onNewToken(parsed);
+    }
   });
 }

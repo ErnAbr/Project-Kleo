@@ -1,7 +1,7 @@
 import { Filter } from "../types";
 
 const filterParams = {
-  devWalletPosition: 15,
+  devWalletPosition: 20,
 };
 
 export const devWalletFilter: Filter = (token) => {
