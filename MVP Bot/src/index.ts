@@ -29,7 +29,7 @@ connectPumpPortal(async (token) => {
             console.log(token);
           } else {
             console.log(
-              `REJECTED: ${token.symbol} — only ${(realSolAfter - realSolInitial).toFixed(3)} SOL in 1 min`,
+              `REJECTED: ${token.symbol} — diff ${(realSolAfter - realSolInitial).toFixed(3)} of SOL in 5 min https://pump.fun/coin/${token.mint}`,
             );
           }
         } catch (err) {
@@ -39,7 +39,7 @@ connectPumpPortal(async (token) => {
           );
         }
       },
-      1 * 60 * 1000,
+      5 * 60 * 1000,
     );
   } else {
     console.log(`REJECTED: ${token.symbol} — ${rejectionReason}`);
